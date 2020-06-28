@@ -2,10 +2,8 @@ class Character < ActiveRecord::Base
   belongs_to :actor
   belongs_to :show
 
-  attr_accessor :catchphrase
-
-    def initialize(catchphrase)
-      @catchphrase = catchphrase 
-    end 
+  def say_that_thing_you_say
+    "Steve Urkel always says: #{self.catchphrase}" 
+  end
 
 end
