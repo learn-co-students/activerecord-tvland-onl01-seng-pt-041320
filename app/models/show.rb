@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
   def actors_list
     shows = Character.where(show_id: self.id)
     shows.map do |x|
-        x.actor.first_name + x.actor.last_name
+        x.actor.first_name + " " + x.actor.last_name
     end
   end
 end
