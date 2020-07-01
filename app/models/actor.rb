@@ -7,6 +7,10 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
+    characters = Character.where(actor_id: self.id)
+    characters.map do |x|
+        x.name + " - " + x.show.name
+    end
   end
 
 end
